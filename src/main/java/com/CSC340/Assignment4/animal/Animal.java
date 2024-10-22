@@ -1,4 +1,4 @@
-package com.CSC340.Assignment4.Student;
+package com.CSC340.Assignment4.animal;
 
 import jakarta.persistence.*;
 

@@ -1,4 +1,4 @@
-package com.CSC340.Assignment4.Student;
+package com.CSC340.Assignment4.animal;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -24,9 +24,14 @@ public class AnimalController {
     }
 
 
-    @GetMapping("")
-    public List<Animal> getStudentsByClass(@RequestParam(name = "species", defaultValue = "human") String species) {
-        return service.getAnimalsByClass(species);
+    @GetMapping("/{animalSpecies}")
+    public List<Animal> getAnimalsBySpecies(@RequestParam(name = "species", defaultValue = "human") String species) {
+        return service.getAnimalsBySpecies(species);
+    }
+
+    @GetMapping("/{animalName}")
+    public List<Animal> getAnimalsByName(@RequestParam(name = "name", defaultValue = "dog") String name){
+        return service.getAnimalsByName(name);
     }
 
 

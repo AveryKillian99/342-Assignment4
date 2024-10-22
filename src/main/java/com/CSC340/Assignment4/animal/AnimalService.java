@@ -1,4 +1,4 @@
-package com.CSC340.Assignment4.Student;
+package com.CSC340.Assignment4.animal;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,18 +12,16 @@ public class AnimalService {
     @Autowired
     private AnimalRepository animalRepository;
 
-
-
     public List<Animal> getAllAnimals() {
-        return AnimalRepository.findAll();
+        return animalRepository.findAll();
     }
 
     public Animal getAnimalById(int animalId) {
         return animalRepository.findById(animalId).orElse(null);
     }
 
-    public List<Animal> getAnimalsByClass(String species) {
-        return animalRepository.getAnimalsByClass(species);
+    public List<Animal> getAnimalsBySpecies(String species) {
+        return animalRepository.getAnimalsBySpecies(species);
     }
 
     public void addNewAnimal(Animal animal) {
@@ -48,5 +46,8 @@ public class AnimalService {
         animalRepository.deleteById(animalId);
     }
 
+
+    public List<Animal> getAnimalsByName( String name) { return animalRepository.getAnimalsByName(name);
+    }
 
 }
